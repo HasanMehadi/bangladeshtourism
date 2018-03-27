@@ -22,7 +22,7 @@ public class LoginRegistrationController {
    }
 
    @PostMapping("/saveUser")
-   public String saveUser(/**@RequestParam("fname") String fname,@RequestParam("lname")String lname,@RequestParam("email") String email,@RequestParam("phone") String phone,@RequestParam("username")String username,@RequestParam("password")String password*/ @ModelAttribute Users user){
+   public String saveUser(@ModelAttribute Users user){
       Users users = user; //new Users(fname,lname,email,phone,username,password);
       service.saveUsers(users);
       return "login";

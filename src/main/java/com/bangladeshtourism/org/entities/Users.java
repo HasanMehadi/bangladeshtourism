@@ -1,9 +1,7 @@
 package com.bangladeshtourism.org.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Users {
@@ -17,6 +15,12 @@ public class Users {
     String phone;
     String username;
     String password;
+    @OneToMany
+    @Column(name = "plans")
+    List<TourPlan> plans;
+    @OneToMany
+    @Column(name = "packages")
+    List<TourPackage> packages;
 
     public Users() {
     }

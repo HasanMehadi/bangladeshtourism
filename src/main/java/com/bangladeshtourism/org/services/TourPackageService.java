@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.Date;
+import java.util.List;
 
 @Service
 @Transactional
@@ -38,5 +39,14 @@ public class TourPackageService {
             System.out.println(ex.getMessage());
         }
         return false;
+    }
+
+    public List<TourPackage> getAllTourPackages(){
+
+        return packageRepository.findAll();
+    }
+    public TourPackage getTourPackageById(int id){
+        TourPackage tourPackage = packageRepository.getOne(id);
+        return tourPackage;
     }
 }
