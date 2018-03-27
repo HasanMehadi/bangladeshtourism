@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("tourpackage")
+@RequestMapping("/tourpackage")
 public class TourPackageController {
 
     List<TourPackage> plans= null;
