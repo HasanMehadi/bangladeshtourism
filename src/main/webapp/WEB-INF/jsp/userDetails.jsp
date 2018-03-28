@@ -1,7 +1,5 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<html>
 <head>
 
     <title>Bangladesh Tourism</title>
@@ -35,6 +33,35 @@
 </nav>
 <div class="container">
 
+    <h2>Users</h2>
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <td>Id</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>UserName</td>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="users" var="user">
+            <tr contenteditable="false">
+                <td >${user.id}></td>
+                <td>${user.fname}</td>
+                <td>${user.lname}</td>
+                <td>${user.email}</td>
+                <td>${user.phone}</td>
+                <td>${user.username}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+
+</div>
+<div class="container">
+
     <h2>TOUR PLANS</h2>
     <table class="table table-dark">
         <thead>
@@ -49,14 +76,14 @@
         </thead>
         <tbody>
         <c:forEach items="planList" var="plan">
-        <tr >
-            <td>${plan.id}></td>
-            <td>${plan.place}</td>
-            <td>${plan.startDate}</td>
-            <td>${plan.endDate}</td>
-            <td>${plan.costPerPerson}</td>
-            <td>${plan.phone}</td>
-        </tr>
+            <tr >
+                <td>${plan.id}></td>
+                <td>${plan.place}</td>
+                <td>${plan.startDate}</td>
+                <td>${plan.endDate}</td>
+                <td>${plan.costPerPerson}</td>
+                <td>${plan.phone}</td>
+            </tr>
         </c:forEach>
         </tbody>
     </table>
@@ -68,27 +95,27 @@
     <h2>PACKAGE TOURS</h2>
     <table class="table table-dark">
         <thead>
-            <tr>
-                <td>Id</td>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>Phone</td>
-                <td>Email</td>
-                <td>User Name</td>
-            </tr>
+        <tr>
+            <td>Id</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Phone</td>
+            <td>Email</td>
+            <td>User Name</td>
+        </tr>
         </thead>
         <tbody>
-            <c:forEach items="tourPackages" var="package">
-                <tr>
-                    <td>${package.id}></td>
-                    <td>${package.place1}</td>
-                    <td>${package.place2}</td>
-                    <td>${package.place3}</td>
-                    <td>${package.startDate}</td>
-                    <td>${package.endDate}</td>
-                    <td>${plan.costPerPerson}</td>
-                </tr>
-            </c:forEach>
+        <c:forEach items="tourPackages" var="package">
+            <tr>
+                <td>${package.id}></td>
+                <td>${package.place1}</td>
+                <td>${package.place2}</td>
+                <td>${package.place3}</td>
+                <td>${package.startDate}</td>
+                <td>${package.endDate}</td>
+                <td>${plan.costPerPerson}</td>
+            </tr>
+        </c:forEach>
         </tbody>
     </table>
 
@@ -96,4 +123,3 @@
 
 </body>
 </html>
-
